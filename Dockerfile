@@ -8,7 +8,4 @@ RUN wget https://raw.githubusercontent.com/MyEcoria/paw-node/main/config/config-
 RUN wget https://raw.githubusercontent.com/MyEcoria/paw-node/main/config/config-node.toml -O Paw/config-node.toml
 RUN cat Paw/config-rpc.toml
 RUN cat Paw/config-node.toml
-ENTRYPOINT ["/bin/sh" "-c" "./paw_node --daemon --data_path=Paw"]
-EXPOSE map[9999/tcp:{}]
-EXPOSE map[7045/tcp:{}]
-EXPOSE map[7046/tcp:{}]
+ENTRYPOINT ./paw_node --daemon --data_path=Paw
