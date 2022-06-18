@@ -13,7 +13,7 @@ address = "::ffff:0.0.0.0"
 # Enable or disable control-level requests.
 # WARNING: Enabling this gives anyone with RPC access the ability to stop the node and access wallet funds.
 # type:bool
-enable_control = true
+enable_control = false
 
 # Maximum number of levels in JSON requests.
 # type:uint8
