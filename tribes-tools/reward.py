@@ -59,7 +59,7 @@ print(sending)
 
 while nADD < int(user2) - 1:
 
-    recup = '{ "action": "delegators", "account": "paw_3trcizdrj8uck5f46onn3tomac7wgx5rfey7a1y5dp9q3dqyn6ccup688atx", "start": "' + last + '", "count": "1" }'
+    recup = '{ "action": "delegators", "account": "replace", "start": "' + last + '", "count": "1" }'
 
     recup = json.loads(recup)
     request = requests.post(url, json = recup)
