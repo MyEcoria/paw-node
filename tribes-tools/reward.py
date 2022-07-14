@@ -47,7 +47,7 @@ print(last + ": " + str(pOne) + "%")
 bal = (pOne / 100) * int(user4)
 print(bal)
 
-send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + bal + '" }'
+send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '" }'
 send = json.loads(send)
 sending = requests.post(url, json = send)
 sending = sending.text
@@ -72,7 +72,7 @@ while nADD < int(user2) - 1:
     print(last + ": " + str(pOne) + "%")
     bal = (pOne / 100) * int(user4)
     print(bal)
-    send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + bal + '" }'
+    send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '" }'
     send = json.loads(send)
     sending = requests.post(url, json = send)
     sending = sending.text
