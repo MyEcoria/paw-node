@@ -1,5 +1,6 @@
-import requests, json, re
+import requests, json, re, math
 
+# Url du RPC Node
 url = 'http://127.0.0.1:7040'
 
 # Toutes les commande qui vont être utilisé
@@ -33,7 +34,7 @@ user2 = data2["count"]
 user3 = data3["delegators"]
 user4 = data4["balance"]
 
-# Récupération des informations de la premiére adresse
+# Affichage des adresses
 ff1 = json.dumps(user3, indent=4, separators=(", ", " : "))
 last = ff1[7:71]
 one = user3[last]
@@ -42,21 +43,23 @@ whaith = int(user1)
 pOne = 100*one / whaith
 nADD = 0
 print(last + ": " + str(pOne) + "%")
+# Send 1 ere adresse
 
-# Envoye de l'argent à la premiére adresse
+
 bal = (pOne / 100) * int(user4)
+bal = bal / 10000000000000000000000000000
+bal = math.trunc(bal)
 print(bal)
 
-send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '" }'
+send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '0000000000000000000000000000" }'
 send = json.loads(send)
 sending = requests.post(url, json = send)
 sending = sending.text
 print(sending)
 
-# Boucle pour envoyer l'argent à toutes les adresses
 while nADD < int(user2) - 1:
 
-    recup = '{ "action": "delegators", "account": "replace", "start": "' + last + '", "count": "1" }'
+    recup = '{ "action": "delegators", "account": "paw_3trcizdrj8uck5f46onn3tomac7wgx5rfey7a1y5dp9q3dqyn6ccup688atx", "start": "' + last + '", "count": "1" }'
 
     recup = json.loads(recup)
     request = requests.post(url, json = recup)
@@ -71,13 +74,7 @@ while nADD < int(user2) - 1:
     pOne = 100*pour / whaith
     print(last + ": " + str(pOne) + "%")
     bal = (pOne / 100) * int(user4)
+    bal = bal / 10000000000000000000000000000
+    bal = math.trunc(bal)
     print(bal)
-    send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '" }'
-    send = json.loads(send)
-    sending = requests.post(url, json = send)
-    sending = sending.text
-    print(sending)
-    nADD += 1
-
-
-
+    send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) 
