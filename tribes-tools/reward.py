@@ -1,13 +1,13 @@
 import requests, json, re, math
 
-# Url du RPC Node
+
 url = 'http://127.0.0.1:7040'
 
 # Toutes les commande qui vont être utilisé
-size = { "action": "account_weight", "account": "replace" }
-deleguateur_nombre = { "action": "delegators_count", "account": "replace" }
-deleguateur_liste = { "action": "delegators", "account": "replace" }
-balance = { "action": "account_balance", "account": "replace" }
+size = { "action": "account_weight", "account": "change" }
+deleguateur_nombre = { "action": "delegators_count", "account": "change" }
+deleguateur_liste = { "action": "delegators", "account": "change" }
+balance = { "action": "account_balance", "account": "change" }
 
 
 # POST des commandes
@@ -47,11 +47,11 @@ print(last + ": " + str(pOne) + "%")
 
 
 bal = (pOne / 100) * int(user4)
-bal = bal / 10000000000000000000000000000
+bal = bal / 100000000000000000000000
 bal = math.trunc(bal)
 print(bal)
 
-send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) + '0000000000000000000000000000" }'
+send = '{ "action": "send", "wallet": "change", "source": "change", "destination": "' + last + '", "amount": "' + str(bal) + '00000000000000000000000" }'
 send = json.loads(send)
 sending = requests.post(url, json = send)
 sending = sending.text
@@ -59,7 +59,7 @@ print(sending)
 
 while nADD < int(user2) - 1:
 
-    recup = '{ "action": "delegators", "account": "replace", "start": "' + last + '", "count": "1" }'
+    recup = '{ "action": "delegators", "account": "change", "start": "' + last + '", "count": "1" }'
 
     recup = json.loads(recup)
     request = requests.post(url, json = recup)
@@ -74,7 +74,12 @@ while nADD < int(user2) - 1:
     pOne = 100*pour / whaith
     print(last + ": " + str(pOne) + "%")
     bal = (pOne / 100) * int(user4)
-    bal = bal / 10000000000000000000000000000
+    bal = bal / 100000000000000000000000
     bal = math.trunc(bal)
     print(bal)
-    send = '{ "action": "send", "wallet": "replace", "source": "replace", "destination": "' + last + '", "amount": "' + str(bal) 
+    send = '{ "action": "send", "wallet": "change", "source": "change", "destination": "' + last + '", "amount": "' + str(bal) + '00000000000000000000000" }'
+    send = json.loads(send)
+    sending = requests.post(url, json = send)
+    sending = sending.text
+    print(sending)
+    nADD += 1
