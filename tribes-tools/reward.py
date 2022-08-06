@@ -128,3 +128,15 @@ def commission():
     sending = sending.text
     print(sending)
        
+
+# On exécute toutes les fonctions dans l'ordre
+
+commission()
+actualisation()
+
+don()
+actualisation()
+
+envoie()
+
+
