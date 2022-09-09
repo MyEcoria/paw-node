@@ -1,5 +1,8 @@
 #!/bin/bash
 
+apt install python3 python3-pip cron nano wget curl
+python3 -m pip install requests
+
 read -p 'Url: ' url
 read -p 'Trible wallet : ' twallet
 read -p 'Wallet ID : ' idwallet
