@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt install python3 python3-pip cron nano wget curl
+apt install python3 python3-pip cron nano wget curl -y
 python3 -m pip install requests
 
 read -p 'Url: ' url
