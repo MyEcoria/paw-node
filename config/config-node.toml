@@ -478,15 +478,15 @@ vote_minimum = "1000000000000000000000000000"
 
 # WebSocket server bind address.
 # type:string,ip
-#address = "::1"
+address = "::ffff:0.0.0.0"
 
 # Enable or disable WebSocket server.
 # type:bool
-#enable = false
+enable = true
 
 # WebSocket server listening port.
 # type:uint16
-#port = 7048
+port = 7048
 
 [opencl]
 
