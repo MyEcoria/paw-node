@@ -7,4 +7,6 @@ RUN mv ana_node /bin/
 WORKDIR /root
 USER root
 RUN mkdir Ana
+ADD https://raw.githubusercontent.com/MyEcoria/paw-node/main/ananos/config-node.toml Ana/
+ADD https://raw.githubusercontent.com/MyEcoria/paw-node/main/ananos/config-rpc.toml Ana/
 ENTRYPOINT ana_node --daemon --data_path=/root/Ana/
