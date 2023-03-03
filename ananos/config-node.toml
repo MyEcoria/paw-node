@@ -25,7 +25,7 @@
 
 # Enable or disable local host peering.
 # type:bool
-#allow_local_peers = false
+allow_local_peers = true
 
 # Backup the ledger database before performing upgrades.
 # Warning: uses more disk storage and increases startup time when upgrading.
@@ -86,7 +86,7 @@
 
 # Enable or disable voting. Enabling this option requires additional system resources, namely increased CPU, bandwidth and disk usage.
 # type:bool
-#enable_voting = false
+enable_voting = true
 
 # The external address of this node (NAT). If not set, the node will request this information via UPnP.
 # type:string,ip
@@ -94,7 +94,7 @@
 
 # The external port number of this node (NAT). Only used if external_address is set.
 # type:uint16
-#external_port = 0
+external_port = 7055
 
 # Mode controlling frontier confirmation rate.
 # type:string,{auto,always,disabled}
@@ -132,7 +132,7 @@
 
 # Node peering port.
 # type:uint16
-#peering_port = 7175
+peering_port = 7175
 
 # Time to sleep between batch work generation attempts. Reduces max CPU usage at the expense of a longer generation time.
 # type:nanoseconds
