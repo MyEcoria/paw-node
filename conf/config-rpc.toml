@@ -8,12 +8,12 @@
 
 # Bind address for the RPC server.
 # type:string,ip
-#address = "::1"
+address = "::ffff:0.0.0.0"
 
 # Enable or disable control-level requests.
 # WARNING: Enabling this gives anyone with RPC access the ability to stop the node and access wallet funds.
 # type:bool
-#enable_control = false
+enable_control = true
 
 # Maximum number of levels in JSON requests.
 # type:uint8
@@ -25,7 +25,7 @@
 
 # Listening port for the RPC server.
 # type:uint16
-#port = 45000
+port = 9999
 
 [logging]
 
