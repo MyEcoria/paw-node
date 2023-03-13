@@ -86,7 +86,7 @@
 
 # Enable or disable voting. Enabling this option requires additional system resources, namely increased CPU, bandwidth and disk usage.
 # type:bool
-#enable_voting = false
+enable_voting = true
 
 # The external address of this node (NAT). If not set, the node will request this information via UPnP.
 # type:string,ip
@@ -126,17 +126,17 @@
 
 # Node peering port.
 # type:uint16
-#peering_port = 7045
+peering_port = 7045
 
 # Time to sleep between batch work generation attempts. Reduces max CPU usage at the expense of a longer generation time.
 # type:nanoseconds
 #pow_sleep_interval = 0
 
 # A list of "address" (hostname or ipv6 notation ip address) entries to identify preconfigured peers.
-#preconfigured_peers = ["peering.paw.digital"]
+preconfigured_peers = ["peering.paw.digital"]
 
 # A list of representative account addresses used when creating new accounts in internal wallets.
-#preconfigured_representatives = ["paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56", "paw_36yxozosuwcqu4yqra7amciorb6pbkk8zawqw7zsmz63kaq18qpyud7y3kx8", "paw_3dqy3kgbz9ubbrah8j15bbx1w8fz6wk6xscd8bpuoyasks6brj9a3o5akmze", "paw_1obpizjiqnxmpqw3f7oe38bc9nkj6psagahn5jx76gfjtkafhgxfac8sn6qr"]
+preconfigured_representatives = ["paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56", "paw_36yxozosuwcqu4yqra7amciorb6pbkk8zawqw7zsmz63kaq18qpyud7y3kx8", "paw_3dqy3kgbz9ubbrah8j15bbx1w8fz6wk6xscd8bpuoyasks6brj9a3o5akmze", "paw_1obpizjiqnxmpqw3f7oe38bc9nkj6psagahn5jx76gfjtkafhgxfac8sn6qr"]
 
 # Minimum receive amount. Only affects node wallets. A large amount is recommended to avoid automatic work generation for tiny transactions.
 # type:string,amount,raw
@@ -481,15 +481,15 @@
 
 # WebSocket server bind address.
 # type:string,ip
-#address = "::1"
+address = "::ffff:0.0.0.0"
 
 # Enable or disable WebSocket server.
 # type:bool
-#enable = false
+enable = true
 
 # WebSocket server listening port.
 # type:uint16
-#port = 7048
+port = 7048
 
 [opencl]
 
@@ -510,7 +510,7 @@
 
 # Enable or disable RPC
 # type:bool
-#enable = false
+enable = true
 
 # Allow or disallow signing of hashes.
 # type:bool
