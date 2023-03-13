@@ -8,5 +8,5 @@ WORKDIR /root
 USER root
 RUN mkdir Paw
 ADD https://raw.githubusercontent.com/MyEcoria/paw-node/main/conf/config-rpc.toml Paw/
-ADD https://raw.githubusercontent.com/MyEcoria/paw-node/main/conf/config-node.tomll Paw/
+ADD https://raw.githubusercontent.com/MyEcoria/paw-node/main/conf/config-node.toml Paw/
 ENTRYPOINT paw_node --daemon --data_path=/root/Paw/
